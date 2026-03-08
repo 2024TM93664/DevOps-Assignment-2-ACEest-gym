@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACEest Functional Fitness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        ACEest FUNCTIONAL FITNESS
+    </header>
+
+    <div class="container">
+    
+        <div class="left-panel">
+    
+            <h3>Client Profile</h3>
+    
+            <form method="POST">
+    
+                <label>Select Program</label><br><br>
+    
+                <select name="program">
+                    <option disabled selected>Choose...</option>
+    
+                    {% for p in programs %}
+                    <option value="{{ p }}">{{ p }}</option>
+                    {% endfor %}
+    
+                </select>
+    
+                <br><br>
+    
+                <button type="submit">View Plan</button>
+    
+            </form>
+    
+            <div class="metrics">
+    
+                CAPACITY: 150 Users<br>
+                AREA: 10,000 sq ft<br>
+                BREAK-EVEN: 250 Members
+    
+            </div>
+    
+        </div>
+    
+    
+        <div class="right-panel">
+    
+            <div class="box">
+                <h3>Weekly Workout Chart</h3>
+    
+                <pre class="workout-text">
+                    {{ workout }}
+                </pre>
+    
+            </div>
+    
+    
+            <div class="box">
+                <h3>Daily Nutrition Plan</h3>
+                <pre>
+                    {{ diet }}
+                </pre>
+            </div>
+    
+        </div>
+    
+    </div>
+
+</body>
+
+</html>

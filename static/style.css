@@ -1,0 +1,49 @@
+body{
+background:#1a1a1a;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+header{
+background:#d4af37;
+color:black;
+font-size:28px;
+font-weight:bold;
+text-align:center;
+padding:20px;
+}
+
+.container{
+display:flex;
+padding:20px;
+}
+
+.left-panel{
+width:250px;
+border:1px solid #444;
+padding:20px;
+}
+
+.right-panel{
+flex:1;
+margin-left:20px;
+}
+
+.box{
+border:1px solid #444;
+padding:15px;
+margin-bottom:15px;
+}
+
+.metrics{
+background:#333;
+margin-top:20px;
+padding:10px;
+font-family:monospace;
+}
+
+.workout-text{
+white-space: pre-wrap;
+font-weight: bold;
+}
