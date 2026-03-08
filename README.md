@@ -44,7 +44,7 @@ The application will be accessible at `http://localhost:5001` with the same func
 ## How to Run Tests Manually
 
 1. Install dependencies: `pip install -r requirements.txt`
-2. Run pytest: `pytest`
+2. Run pytest from the project root so that Python can locate `app.py`
 3. Tests will verify the app functionality, including:
    - Home page loads correctly
    - Program selection works for Fat Loss, Muscle Gain, and Beginner programs
@@ -87,8 +87,6 @@ Jenkins can be configured to automate the build process:
 2. **Install dependencies**: Run `pip install -r requirements.txt` in a build step.
 3. **Run tests**: Execute `pytest` to validate the application.
 4. **Build the Docker image**: Run `docker build -t aceest-gym .` to create the container image.
-
-Jenkins pipelines can be triggered by GitHub webhooks on pushes or pull requests, providing continuous integration.
 
 ## Explanation of Version Control Strategy
 

@@ -23,7 +23,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run pytest
-      run: pytest
+      run: |
+        PYTHONPATH=. pytest
 
     - name: Build Docker image
       run: docker build -t aceest-gym .
