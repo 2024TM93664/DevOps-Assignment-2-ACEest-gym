@@ -2,9 +2,10 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_IMAGE = "aceest-gym:latest"
-    SONAR_HOST_URL = "${SONAR_HOST_URL}"
-    SONAR_TOKEN = "${SONAR_TOKEN}"
+      DOCKER_IMAGE = "aceest-gym:latest"
+      SONAR_HOST_URL = "${SONAR_HOST_URL}"
+      SONAR_TOKEN = "${SONAR_TOKEN}"
+      PATH = "/usr/local/bin:/usr/bin:/bin:${env.PATH}"
   }
 
   stages {
