@@ -29,16 +29,12 @@ pipeline {
     }
 
     stage('SonarQube analysis') {
-      steps {
-        sh '''
-          sonar-scanner \
-            -Dsonar.projectKey=aceest-gym \
-            -Dsonar.sources=. \
-            -Dsonar.host.url=${SONAR_HOST_URL} \
-            -Dsonar.login=${SONAR_TOKEN}
-        '''
+    steps {
+      withSonarQubeEnv('SonarQube') {
+        sh 'sonar-scanner'
       }
     }
+  }
 
     stage('Build Docker image') {
       steps {
