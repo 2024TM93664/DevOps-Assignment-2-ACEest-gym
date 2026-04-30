@@ -8,6 +8,7 @@ pipeline {
   }
 
   stages {
+
     stage('Checkout') {
       steps {
         checkout scm
@@ -16,14 +17,14 @@ pipeline {
 
     stage('Install dependencies') {
       steps {
-        sh 'python -m pip install --upgrade pip'
-        sh 'pip install -r requirements.txt'
+        sh 'python3 -m pip install --upgrade pip'
+        sh 'pip3 install -r requirements.txt'
       }
     }
 
     stage('Run tests') {
       steps {
-        sh 'pytest -q'
+        sh 'python3 -m pytest -q'
       }
     }
 
@@ -48,7 +49,6 @@ pipeline {
     stage('Deploy to Minikube') {
       steps {
         sh '''
-          eval $(minikube docker-env)
           kubectl apply -f k8s/service.yaml
           kubectl apply -f k8s/deployment.yaml
           kubectl rollout status deployment/aceest-gym-deployment
