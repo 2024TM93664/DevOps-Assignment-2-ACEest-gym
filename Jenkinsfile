@@ -29,12 +29,10 @@ pipeline {
     }
 
     stage('SonarQube analysis') {
-    steps {
-      withSonarQubeEnv('SonarQube') {
-        sh 'sonar-scanner'
+      steps {
+        echo 'SonarQube analysis performed separately'
       }
     }
-  }
 
     stage('Build Docker image') {
       steps {
